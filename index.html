@@ -34,37 +34,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 </div>		
 		<div class="pageTtl_wrap">
-			<h1 class="pageTtl">関西企画会社情報<br><span class="pageTtl_en gFonts_roboto">Company Profile</span></h1>
+			<h1 class="pageTtl">株式会社関西企画会社情報<br><span class="pageTtl_en gFonts_roboto">Company Profile</span></h1>
 		</div>
 		
 		<div class="menu_wrap">
 			<p class="menuLabel sp"><span class="menuLabel_txt">社長メッセージ</span><span class="menuLabel_btn"></span></p>
 			<div class="menu_list_wrap">
 				<ul class="menu_list">
-					<li class="menu_item"><a href="index.html" class="menu_link"><span class="menu_link menu_link_current"><span class="menu_txtBox">社長メッセージ</span></span></a></li>
-					<li class="menu_item"><a href="idea.html" class="menu_link"><span class="menu_txtBox">企業理念</span></a></li>
+					<li class="menu_item"><a href="index.html" class="menu_link"><span class="menu_link menu_link_current"><span class="menu_txtBox">トップページ</span></span></a></li>
+					<li class="menu_item"><a href="about.html" class="menu_link"><span class="menu_txtBox">社長メッセージ</span></a></li>
 					<li class="menu_item"><a href="outline.html" class="menu_link"><span class="menu_txtBox">企業概要</span></a></li>
 					<li class="menu_item"><a href="content.html" class="menu_link"><span class="menu_txtBox">事業内容</span></a></li>
 					<li class="menu_item"><a href="achievement.html" class="menu_link"><span class="menu_txtBox">実績</span></a></li>
 					<li class="menu_item"><a href="bank.html" class="menu_link"><span class="menu_txtBox">取り扱い銀行</span></a></li>
 					<li class="menu_item"><a href="organization.html" class="menu_link"><span class="menu_txtBox">組織図</span></a></li>
+					<li class="menu_item"><a href="line.html" class="menu_link"><span class="menu_txtBox">モデルコース</span></a></li>
 				</ul>
 			</div>
 		</div>
 		
 		<div class="article">
-			<h2 class="articleTtl">社長メッセージ<br></h2>
+			<h2 class="articleTtl">トップページ<br></h2>
 			
 			
-			<div class="outline_sectionBox">
-				<p class="outline_prgrph">
-						　関西企画旅行は2014年7月、旅行業務を中心として起業し、訪日外国人旅行や外国人パッケージツアー、ビジネス研修旅行、修学旅行、個人旅行などの取り扱いで、ご利用いただいたお客様、並びにホテル業、旅客運輸業、特産販売業、観光案内士の皆様から多大なるご支持とお取引先様との良好な信頼関係を結びつけ、着実に成長し続けてまいりました。
-　2019年、取り扱い旅客数が22,000余人で、売上額が7億円超となり、前年度比でいずれも3割増ほどの躍進的な発展を遂げました。
-　さて、2020年は新型コロナウイルス感染症の拡大により、私ども旅行業界はもとより、多くの業種が不曽有の危機に見舞われました。今後、従業員一同、たゆまない努力を惜しまず、常に変化を求め前進してまいります。
-　引き続きご支援とご愛顧のほど宜しくお願い申し上げます。<br>
-<img src="images/img2.jpg">
-
-				</p>
+			<div class="outline_sectionBox" style="margin:80px 0 60px 0;">
+				<div class="slide_section">
+					<ul>
+						<li><img src="images/img3.jpg"></li>
+						<li><img src="images/img4.jpg"></li>
+						<li><img src="images/img5.jpg"></li>
+					</ul>
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
 			</div>		
 		</div>
 		<!--end_article-->
@@ -81,4 +83,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!--JS-->
 <script src="images/jquery-3.6.0.min.js" language="javascript"></script>
+<script language="javascript">
+$(function(){
+	function move_slide(options){
+		var defaults = {
+			movement_speed : 700,
+			movement_time : 7000,
+			move_type : 0,
+			tt : null
+		};
+		var options = $.extend(defaults, options);
+		var init = function(){
+			options.length = options.this_li.length;
+			options.width = options.this_li.outerWidth(true);
+			options.this_ul.width(options.length * options.width).hover(stop, auto);
+			options.btn_left.click(function(){run(1)}).hover(stop, auto);
+			options.btn_right.click(function(){run(-1)}).hover(stop, auto);
+			auto();
+		}
+		var run = function(n){
+			if(options.this_ul.is(':animated')){return false;}
+			if(n==1){
+				options.this_ul.find('li:last').prependTo(options.this_ul);
+				options.this_ul.css('marginLeft', 0-options.width);
+				options.this_ul.animate({'margin-left':0}, options.movement_speed, function () {});
+			}else if(n==-1){
+				options.this_ul.animate({'margin-left':0-options.width}, options.movement_speed, function () {
+					options.this_ul.find('li:first').appendTo(options.this_ul);
+					options.this_ul.css('marginLeft', 0);
+				});
+			}
+			return false;
+		}
+		var auto = function(){
+			options.tt = window.setInterval(function(){run(-1)}, options.movement_time);
+		}
+		var stop = function () {
+			window.clearInterval(options.tt);
+		}
+		init();
+	}
+	move_slide({
+		this_ul : $('.slide_section > ul'),
+		btn_left : $('.slide_section .left'),
+		btn_right : $('.slide_section .right'),
+		this_li : $('.slide_section > ul > li')
+	});
+})
+</script>
+<style type="text/css">
+
+.slide_section{width:1082px;height:812px;position:relative;overflow:hidden;}
+.slide_section ul{height:100%;}
+.slide_section ul li{height:100%;width:1082px;float:left;}
+.slide_section ul li img{height:100%;width:100%;display:block;}
+.slide_section .left{position:absolute;left:30px;top:360px;width:30px;height:100px;background:url(images/left1.jpg) no-repeat center;}
+.slide_section .right{position:absolute;right:30px;top:360px;width:30px;height:100px;background:url(images/right1.jpg) no-repeat center;}
+</style>
 </body></html>
