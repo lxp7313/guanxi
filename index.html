@@ -38,7 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		
 		<div class="menu_wrap">
-			<p class="menuLabel sp"><span class="menuLabel_txt">社長メッセージ</span><span class="menuLabel_btn"></span></p>
+			<p class="menuLabel sp"><span class="menuLabel_txt">トップページ</span><span class="menuLabel_btn"></span></p>
 			<div class="menu_list_wrap">
 				<ul class="menu_list">
 					<li class="menu_item"><a href="index.html" class="menu_link"><span class="menu_link menu_link_current"><span class="menu_txtBox">トップページ</span></span></a></li>
@@ -83,6 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!--JS-->
 <script src="images/jquery-3.6.0.min.js" language="javascript"></script>
+<script src="images/base.js" language="javascript"></script>
 <script language="javascript">
 $(function(){
 	function move_slide(options){
@@ -133,9 +134,9 @@ $(function(){
 </script>
 <style type="text/css">
 
-.slide_section{width:1082px;height:812px;position:relative;overflow:hidden;}
-.slide_section ul{height:100%;}
-.slide_section ul li{height:100%;width:1082px;float:left;}
+.slide_section{width:100%;position:relative;overflow:hidden;}
+.slide_section ul{height:100%;width:300%;}
+.slide_section ul li{height:100%;width:calc(100% / 3);float:left;}
 .slide_section ul li img{height:100%;width:100%;display:block;}
 .slide_section .left{position:absolute;left:30px;top:360px;width:30px;height:100px;background:url(images/left1.jpg) no-repeat center;}
 .slide_section .right{position:absolute;right:30px;top:360px;width:30px;height:100px;background:url(images/right1.jpg) no-repeat center;}
