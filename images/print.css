@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*印刷用css*/
+
+/*other*/
+.nav_wrap {
+	position: absolute;
+}
+
+.nav_box {
+	display: none;
+}

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*aboutページ用css*/
+
+/*-------------------------------
+
+	600pxまで（sp）
+
+-------------------------------*/
+
+/*---------- ページタイトル ----------*/
+.pageTtl_wrap {
+}
+
+.outline_sectionBox:first-of-type {
+	margin-top: 20%;
+}
+
+.about_list {
+	margin-bottom: 5%;
+}
+
+.about_list_ttl {
+	margin-bottom: 2%;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 2;
+	border-bottom: 1px dotted rgba(0,0,0,.3);
+}
+
+.about_orderList {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+
+.about_orderList_item {
+	color: #333;
+	text-indent: -2.3rem;
+	padding: 0 0 2% 2.3rem;
+	margin-top: 2%;
+	border-bottom: 1px dotted rgba(0,0,0,.3);
+}
+
+.outline_txtLink {
+	color: #1a0dab;
+	text-decoration: underline;
+}
+
+.outline_txtLink:visited {
+	color: #660099;
+}
+
+.blockBox {
+	display: inline-block;
+	width: 90px;
+	margin-right: 2rem;
+}
+
+/*-------------------------------
+
+	600pxから（タブレット）
+
+-------------------------------*/
+
+@media print, screen and (min-width: 600px) {
+	
+	.outline_sectionBox:first-of-type {
+		margin-top: 80px;
+	}
+	
+	.about_list {
+		display:-webkit-box;
+  	display:-ms-flexbox;
+		display: flex;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+    margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px dotted rgba(0,0,0,0.3);
+	}
+	
+	/*.about_list:last-child {
+		border-bottom: none;
+	}*/
+	
+	.about_list_ttl {
+		margin: 0 2.5rem 0 0;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 0;
+    width: 180px;
+	}
+	
+	.about_orderList_item {
+		font-size: 1.5rem;
+	}
+	
+	.about_orderList_item {
+		padding-bottom: 15px;
+		margin-top: 15px;
+	}
+	
+}
+
+/*-------------------------------
+
+	600pxから（タブレット）
+
+-------------------------------*/
+
+@media print, screen and (min-width: 960px) {
+	
+	.outline_txtLink {
+		text-decoration: none;
+	}
+	
+	.outline_txtLink:hover {
+		text-decoration: underline;
+	}
+	
+}
