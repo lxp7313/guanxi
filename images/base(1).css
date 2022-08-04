@@ -300,6 +300,12 @@
 .outline_prgrph {
 	color: #333;
 	line-height: 1.8;
+	display:none;
+}
+.outline_prgrph1 {
+	color: #333;
+	line-height: 1.8;
+	display:block;
 }
 /*---------- end_outlineベーステキスト設定 ----------*/
 
@@ -441,7 +447,13 @@
 	/*---------- outlineベーステキスト設定 ----------*/
 	.outline_prgrph {
 		font-size: 1.5rem;
+		display:block;
 	}
+	.outline_prgrph1 {
+		font-size: 1.5rem;
+		display:none;
+	}
+
 	/*---------- end_outlineベーステキスト設定 ----------*/
 	
 }
