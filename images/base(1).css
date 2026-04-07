@@ -484,7 +484,7 @@
 	}
 	
 	.menu_item {
-		width: calc(100% / 8);
+		width: calc(100% / 7);
 		border-bottom: none; /*タブレット打ち消し*/
 	}
 	
